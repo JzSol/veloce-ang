@@ -1,0 +1,63 @@
+<div class="main">
+  <!-- Slogan -->
+  <div class="container1">
+    <h2 class="sloganTxt">
+      We believe a cup of coffee is one of the most important, simple
+      <span class="pleasures">pleasures</span> in life
+    </h2>
+  </div>
+
+  <!-- Product list layout -->
+  <section class="chooseCoffe">
+    <section
+      class="option1"
+      *ngFor="let cup of cups">
+      <div class="cup1">
+        <img
+          src="{{ cup.cupImg }}"
+          alt="Extra Latte Cup"
+          class="cup" />
+        <div
+          class="rotateImg"
+          *ngIf="cup.stamp"></div>
+      </div>
+
+      <div class="coffeInfo">
+        {{ cup.title }}
+        <img
+          src="{{ cup.price }}"
+          alt="price"
+          class="price" />
+      </div>
+
+      <div class="chooseSize">
+        <input
+          class="sizeBtn"
+          type="radio"
+          name="size" />
+        <label class="size">{{ cup.size1 }} ml</label>
+        <input
+          class="sizeBtn"
+          type="radio"
+          name="size" />
+        <label class="size">{{ cup.size2 }} ml</label>
+      </div>
+
+      <div class="sugarChoice">
+        <input
+          class="sugarBtn"
+          type="checkbox" />
+        <div class="sugar">{{ cup.IsSugar }}</div>
+      </div>
+
+      <div class="cartContainer">
+        <button
+          class="cartBtn"
+          (click)="increment()">
+          add to cart
+        </button>
+        <button class="infoBtn"></button>
+      </div>
+    </section>
+  </section>
+</div>

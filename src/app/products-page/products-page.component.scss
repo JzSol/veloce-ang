@@ -1,0 +1,299 @@
+.main {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+
+  background: #fef2e8;
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.container1 {
+  margin-left: 240px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 792px;
+  height: 174px;
+
+  margin-top: 64px;
+}
+
+.sloganTxt {
+  width: 760px;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  color: #023a6b;
+  font-family: Eczar;
+}
+
+.pleasures {
+  color: #f73;
+  font-family: Eczar;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    display: flex;
+    justify-content: center;
+  }
+  .container1 {
+    margin-left: 18vw;
+    width: 327px;
+    margin-top: 0px;
+  }
+  .sloganTxt {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+  }
+  .pleasures {
+    color: #f73;
+    font-family: Eczar;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+  }
+}
+
+.chooseCoffe {
+  display: inline-flex;
+  flex-direction: row;
+
+  margin-top: 64px;
+  gap: 48px;
+
+  width: 960px;
+  height: 426px;
+  margin-left: 240px;
+}
+
+.option1 {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  margin-right: 4.8vw;
+}
+
+.cup1 {
+  display: flex;
+  z-index: 0;
+}
+
+.rotateImg {
+  margin-left: -135px;
+  margin-top: 110px;
+  display: flex;
+  width: 100px;
+  height: 103px;
+  padding-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  background-image: url('../../Images/Stamp.png');
+  animation: rotation 23s ease-in-out infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.cup {
+  width: 264px;
+  height: 220px;
+}
+
+.nameNprice {
+  display: flex;
+}
+
+.coffeInfo {
+  display: flex;
+  margin-bottom: 16px;
+  margin-top: 24px;
+
+  color: #023a6b;
+  font-family: Eczar;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.price {
+  align-items: flex-start;
+  padding: 2px 6px;
+  gap: 10px;
+  width: 54px;
+  height: 23px;
+}
+
+.chooseSize {
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sizeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.sizeBtn:checked::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #ff7733;
+}
+
+.size {
+  margin-right: 16px;
+
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #023a6b;
+}
+
+.sugarChoice {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sugarBtn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: #fff;
+  border-radius: 30%;
+  cursor: pointer;
+  z-index: 0;
+  appearance: none;
+}
+
+.sugarBtn:checked::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffbd5c;
+  border-radius: 35%;
+  position: relative;
+  z-index: 1;
+}
+
+.sugar {
+  margin-left: 12px;
+
+  color: #023a6b;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cartBtn {
+  display: flex;
+  width: 141px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 64px;
+  border: 2px solid #ffbd5c;
+
+  color: #023a6b;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  background-color: transparent;
+}
+
+.cartBtn:hover {
+  background-color: #ffbd5c;
+  transition: background-color 0.5s ease;
+}
+
+.infoBtn {
+  margin-left: 16px;
+  background-image: url('../../Images/Info.svg');
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.infoBtn:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .chooseCoffe {
+    display: flex;
+    flex-direction: column;
+    margin-left: 18vw;
+    margin-top: 40px;
+  }
+}

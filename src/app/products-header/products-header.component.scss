@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 96px;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 32px;
+}
+
+.grain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 8px;
+  width: 48px;
+  height: 48px;
+  gap: 8px;
+  flex-shrink: 0;
+
+  background-repeat: no-repeat;
+  background-image: url('../../Images/Grain.svg');
+}
+
+.coffeLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 80px;
+  width: 176px;
+  height: 44px;
+  fill: #023a6b;
+
+  background-image: url('../../Images/Coffe.svg');
+}
+
+.cartLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-right: 32px;
+  z-index: 1;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+
+  background-image: url('../../Images/shoppingCart.svg');
+  z-index: 1;
+}
+
+.cart-count {
+  margin-left: 3px;
+  width: 40px;
+  height: 40px;
+  background-image: url('../../Images/added.svg');
+  background-repeat: no-repeat;
+
+  color: #fff;
+  text-align: center;
+  font-family: Recoleta;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  text-transform: uppercase;
+
+  line-height: 56px;
+}
+
+.cartText {
+  display: flex;
+  flex-direction: column;
+  width: 84px;
+  margin-right: 32px;
+
+  color: #023a6b;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+}
