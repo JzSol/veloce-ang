@@ -9,6 +9,9 @@ interface Cup {
   size1: number;
   size2: number;
   IsSugar: string;
+  isChecked: boolean;
+  choosenSize: '250' | '500' | string;
+  buttonClicked?: boolean;
 }
 
 @Component({
@@ -19,8 +22,15 @@ interface Cup {
 export class ProductsPageComponent {
   constructor(private countService: CountService) {}
 
-  increment() {
-    this.countService.incrementCount();
+  buttonClicked = false;
+  increment(cup: Cup) {
+    cup.buttonClicked = true;
+    if (cup.choosenSize) {
+      this.countService.incrementCount();
+      cup.isChecked = false;
+      cup.choosenSize = '';
+      cup.buttonClicked = false;
+    }
   }
 
   cups: Cup[] = [
@@ -32,6 +42,9 @@ export class ProductsPageComponent {
       size1: 250,
       size2: 500,
       IsSugar: 'add Sugar',
+      isChecked: false,
+      choosenSize: '',
+      buttonClicked: false,
     },
     {
       cupImg: '../../Images/Cup2.png',
@@ -40,6 +53,9 @@ export class ProductsPageComponent {
       size1: 250,
       size2: 500,
       IsSugar: 'add Sugar',
+      isChecked: false,
+      choosenSize: '',
+      buttonClicked: false,
     },
     {
       cupImg: '../../Images/Cup3.png',
@@ -48,6 +64,9 @@ export class ProductsPageComponent {
       size1: 250,
       size2: 500,
       IsSugar: 'add Sugar',
+      isChecked: false,
+      choosenSize: '',
+      buttonClicked: false,
     },
   ];
 

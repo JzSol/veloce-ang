@@ -1,0 +1,21 @@
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  background: #fef2e8;
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.title {
+  margin-top: 64px;
+  margin-left: 240px;
+
+  color: #023a6b;
+  font-family: Recoleta;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+}

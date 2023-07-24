@@ -11,7 +11,7 @@
   <section class="chooseCoffe">
     <section
       class="option1"
-      *ngFor="let cup of cups">
+      *ngFor="let cup of cups; let i = index">
       <div class="cup1">
         <img
           src="{{ cup.cupImg }}"
@@ -34,26 +34,37 @@
         <input
           class="sizeBtn"
           type="radio"
-          name="size" />
+          name="size{{ i }}"
+          [(ngModel)]="cup.choosenSize"
+          [value]="cup.size1" />
         <label class="size">{{ cup.size1 }} ml</label>
         <input
           class="sizeBtn"
           type="radio"
-          name="size" />
+          name="size{{ i }}"
+          [(ngModel)]="cup.choosenSize"
+          [value]="cup.size2" />
         <label class="size">{{ cup.size2 }} ml</label>
       </div>
 
       <div class="sugarChoice">
         <input
           class="sugarBtn"
-          type="checkbox" />
+          type="checkbox"
+          [(ngModel)]="cup.isChecked" />
         <div class="sugar">{{ cup.IsSugar }}</div>
+      </div>
+
+      <div
+        class="error-msg"
+        *ngIf="cup.buttonClicked && !cup.choosenSize">
+        please choose cups size
       </div>
 
       <div class="cartContainer">
         <button
           class="cartBtn"
-          (click)="increment()">
+          (click)="increment(cup)">
           add to cart
         </button>
         <button class="infoBtn"></button>

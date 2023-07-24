@@ -29,7 +29,7 @@
   background-image: url('../../Images/Grain.svg');
 }
 
-.coffeLogo {
+.coffe-logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,10 @@
   fill: #023a6b;
 
   background-image: url('../../Images/Coffe.svg');
+  cursor: pointer;
+  &:hover {
+    scale: 1.05;
+  }
 }
 
 .cartLogo {
@@ -94,4 +98,10 @@
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff7733;
+    scale: 1.05;
+  }
 }
