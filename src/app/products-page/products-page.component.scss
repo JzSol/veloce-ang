@@ -9,7 +9,7 @@
   overflow-y: auto;
 }
 
-.container1 {
+.container {
   margin-left: 240px;
 
   display: flex;
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
   }
-  .container1 {
+  .container {
     margin-left: 18vw;
     width: 327px;
     margin-top: 0px;
@@ -80,19 +80,19 @@
   margin-left: 240px;
 }
 
-.option1 {
+.option {
   display: flex;
   flex-direction: column;
   z-index: 1;
   margin-right: 4.8vw;
 }
 
-.cup1 {
+.cup {
   display: flex;
   z-index: 0;
 }
 
-.rotateImg {
+.rotate-img {
   margin-left: -135px;
   margin-top: 110px;
   display: flex;
@@ -130,7 +130,7 @@
   display: flex;
 }
 
-.coffeInfo {
+.coffe-info {
   display: flex;
   margin-bottom: 16px;
   margin-top: 24px;
@@ -151,7 +151,7 @@
   height: 23px;
 }
 
-.chooseSize {
+.choose-size {
   margin-bottom: 16px;
 
   display: flex;
@@ -159,7 +159,7 @@
   align-items: center;
 }
 
-.sizeBtn {
+.size-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,13 +197,13 @@
   color: #023a6b;
 }
 
-.sugarChoice {
+.sugar-choice {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.sugarBtn {
+.sugar-btn {
   width: 24px;
   height: 24px;
   border: none;
@@ -217,10 +217,10 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #ffbd5c;
-    border-radius: 35%;
     position: relative;
     z-index: 1;
+
+    background-image: url('../../Images/Checkbox.svg');
   }
 }
 
@@ -228,6 +228,7 @@
   margin-left: 12px;
 
   color: #023a6b;
+  font-family: Open Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -258,13 +259,13 @@
   font-weight: 700;
 }
 
-.cartContainer {
+.cart-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.cartBtn {
+.cart-btn {
   display: flex;
   width: 141px;
   height: 48px;
@@ -276,6 +277,7 @@
   border: 2px solid #ffbd5c;
 
   color: #023a6b;
+  font-family: Open Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -290,7 +292,7 @@
   }
 }
 
-.infoBtn {
+.info-btn {
   margin-left: 16px;
   background-image: url('../../Images/Info.svg');
   width: 20px;

@@ -1,6 +1,6 @@
 <div class="main">
   <!-- Slogan -->
-  <div class="container1">
+  <div class="container">
     <h2 class="sloganTxt">
       We believe a cup of coffee is one of the most important, simple
       <span class="pleasures">pleasures</span> in life
@@ -10,19 +10,19 @@
   <!-- Product list layout -->
   <section class="chooseCoffe">
     <section
-      class="option1"
+      class="option"
       *ngFor="let cup of cups; let i = index">
-      <div class="cup1">
+      <div class="cup">
         <img
           src="{{ cup.cupImg }}"
           alt="Extra Latte Cup"
           class="cup" />
         <div
-          class="rotateImg"
+          class="rotate-img"
           *ngIf="cup.stamp"></div>
       </div>
 
-      <div class="coffeInfo">
+      <div class="coffe-info">
         {{ cup.title }}
         <img
           src="{{ cup.price }}"
@@ -30,16 +30,17 @@
           class="price" />
       </div>
 
-      <div class="chooseSize">
+      <div class="choose-size">
         <input
-          class="sizeBtn"
+          class="size-btn"
           type="radio"
           name="size{{ i }}"
           [(ngModel)]="cup.choosenSize"
           [value]="cup.size1" />
         <label class="size">{{ cup.size1 }} ml</label>
+
         <input
-          class="sizeBtn"
+          class="size-btn"
           type="radio"
           name="size{{ i }}"
           [(ngModel)]="cup.choosenSize"
@@ -47,9 +48,9 @@
         <label class="size">{{ cup.size2 }} ml</label>
       </div>
 
-      <div class="sugarChoice">
+      <div class="sugar-choice">
         <input
-          class="sugarBtn"
+          class="sugar-btn"
           type="checkbox"
           [(ngModel)]="cup.isChecked" />
         <div class="sugar">{{ cup.IsSugar }}</div>
@@ -61,13 +62,13 @@
         please choose cups size
       </div>
 
-      <div class="cartContainer">
+      <div class="cart-container">
         <button
-          class="cartBtn"
+          class="cart-btn"
           (click)="increment(cup)">
           add to cart
         </button>
-        <button class="infoBtn"></button>
+        <button class="info-btn"></button>
       </div>
     </section>
   </section>
