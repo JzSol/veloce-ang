@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
 import { ProductsPageComponent } from './products-page/products-page.component';
 import { ProductsCartComponent } from './products-cart/products-cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ProductsCartComponent } from './products-cart/products-cart.component';
     ProductsPageComponent,
     ProductsCartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

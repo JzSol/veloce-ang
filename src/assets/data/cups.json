@@ -1,0 +1,38 @@
+{
+  "cups": [
+    {
+      "cupImg": "../../Images/Cup.png",
+      "stamp": true,
+      "price": "../../Images/Price.png",
+      "title": "ExtraLatte",
+      "size1": 250,
+      "size2": 500,
+      "IsSugar": "add Sugar",
+      "isChecked": false,
+      "choosenSize": "",
+      "buttonClicked": false
+    },
+    {
+      "cupImg": "../../Images/Cup2.png",
+      "price": "../../Images/Price2.png",
+      "title": "Cappuccino",
+      "size1": 250,
+      "size2": 500,
+      "IsSugar": "add Sugar",
+      "isChecked": false,
+      "choosenSize": "",
+      "buttonClicked": false
+    },
+    {
+      "cupImg": "../../Images/Cup3.png",
+      "price": "../../Images/Price3.png",
+      "title": "Moccachino",
+      "size1": 250,
+      "size2": 500,
+      "IsSugar": "add Sugar",
+      "isChecked": false,
+      "choosenSize": "",
+      "buttonClicked": false
+    }
+  ]
+}

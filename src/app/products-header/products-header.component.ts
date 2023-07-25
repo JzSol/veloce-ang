@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CountService } from '../counter.service';
+import { CountService } from '../services/counter.service';
 import { Subscription } from 'rxjs';
 
 @Component({

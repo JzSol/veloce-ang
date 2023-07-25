@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductsPageComponent } from './products-page/products-page.component';
+import { DataResolverService } from './services/data-resolver.service';
 
 const routes: Routes = [
   {
@@ -8,6 +10,7 @@ const routes: Routes = [
       import('./products-page/products-page.module').then(
         (m) => m.ProductsPageModule
       ),
+    resolve: { data: DataResolverService },
   },
   {
     path: 'cart',
