@@ -7,7 +7,10 @@ import { CartService } from '../services/cart.service';
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
-  styleUrls: ['./products-page.component.scss'],
+  styleUrls: [
+    './products-page.component.scss',
+    './products-page2.component.scss',
+  ],
 })
 export class ProductsPageComponent implements OnInit {
   data: Cup[] = [];
