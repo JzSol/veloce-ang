@@ -1,3 +1,87 @@
-<section class="shopping-cart">
-  <h2 class="title">Shopping Cart</h2>
+<section class="shopping-cart-page">
+  <section class="shopping-cart">
+    <h2 class="title">Shopping Cart</h2>
+
+    <div
+      class="shopping-cart-items"
+      *ngFor="let item of items">
+      <img
+        src="{{ item.cupImg }}"
+        class="cup" />
+
+      <div class="items-info">
+        <h2 class="cart-title">
+          {{ item.title }}
+          <div class="price">
+            <label class="price-lable">
+              ${{ item.price[item.choosenSize] }}</label
+            >
+          </div>
+        </h2>
+
+        <div class="additions">
+          <img
+            class="logo"
+            src="../../Images/cup-logo.svg" />
+          <div class="text">{{ item.choosenSize }}ML</div>
+
+          <img
+            *ngIf="item.IsSugarAdded"
+            class="logosugar"
+            src="../../Images/Sugar.svg" />
+          <div
+            class="text"
+            *ngIf="item.IsSugarAdded">
+            Sugar
+          </div>
+        </div>
+      </div>
+
+      <div class="button">
+        <button
+          class="substract"
+          (click)="decrementQty(item)"></button>
+        <div class="count">{{ item.qty }}</div>
+        <button
+          class="add"
+          (click)="incrementQty(item)"></button>
+      </div>
+
+      <button
+        class="delete-item"
+        (click)="removeFromCart(item)"></button>
+    </div>
+  </section>
+
+  <div class="checkout">
+    <h2 class="checkout-title">Checkout</h2>
+
+    <div class="checkout-list">
+      <div
+        class="list-title"
+        *ngFor="let item of items">
+        {{ item.title }}, {{ item.choosenSize }} ml
+        <span class="list-price">
+          <span
+            class="list-price"
+            *ngIf="item.qty > 1"
+            >{{ item.qty }}X
+          </span>
+          ${{ item.price[item.choosenSize] }}
+        </span>
+      </div>
+
+      <div class="list-title">
+        Delivery
+        <span class="list-price">$5</span>
+      </div>
+
+      <div class="total">
+        Total
+        <span class="list-price"> ${{ getTotalPrice() }} </span>
+      </div>
+    </div>
+
+    <button class="pay-btn">to pay</button>
+  </div>
 </section>

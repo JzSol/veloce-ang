@@ -12,4 +12,8 @@ export class CountService {
   incrementCount() {
     this.count.next(this.count.value + 1);
   }
+
+  decrementCount() {
+    this.count.next(this.count.value > 0 ? this.count.value - 1 : 0);
+  }
 }

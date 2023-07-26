@@ -24,10 +24,12 @@
 
       <div class="coffe-info">
         {{ cup.title }}
-        <img
-          src="{{ cup.price }}"
-          alt="price"
-          class="price" />
+
+        <div class="price">
+          <label class="price-lable">
+            ${{ cup.choosenSize ? cup.price[cup.choosenSize] : 0.0 }}</label
+          >
+        </div>
       </div>
 
       <div class="choose-size">
@@ -52,7 +54,7 @@
         <input
           class="sugar-btn"
           type="checkbox"
-          [(ngModel)]="cup.isChecked" />
+          [(ngModel)]="cup.IsSugarAdded" />
         <div class="sugar">{{ cup.IsSugar }}</div>
       </div>
 

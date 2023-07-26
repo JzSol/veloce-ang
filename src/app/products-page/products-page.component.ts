@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CountService } from '../services/counter.service';
 import { Cup } from '../types/cup.types';
 import { DataService } from '../services/data.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-products-page',
@@ -13,7 +14,8 @@ export class ProductsPageComponent implements OnInit {
 
   constructor(
     private countService: CountService,
-    private dataService: DataService
+    private dataService: DataService,
+    public cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -23,12 +25,16 @@ export class ProductsPageComponent implements OnInit {
   }
 
   buttonClicked = false;
+
   increment(cup: Cup) {
     cup.buttonClicked = true;
     if (cup.choosenSize) {
+      const cupCopy = { ...cup };
+      this.cartService.addToCart(cupCopy);
+
       this.countService.incrementCount();
-      cup.isChecked = false;
-      cup.choosenSize = '';
+      cup.IsSugarAdded = false;
+      cup.choosenSize = undefined;
       cup.buttonClicked = false;
     }
   }

@@ -144,11 +144,39 @@
 }
 
 .price {
-  align-items: flex-start;
-  padding: 2px 6px;
-  gap: 10px;
-  width: 54px;
-  height: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 22px;
+  margin-top: -10px;
+
+  height: 50px;
+  width: 24px;
+
+  rotate: 90deg;
+
+  border-radius: 16px;
+  background: #f73;
+}
+
+.price-lable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 42px;
+  height: 19px;
+
+  color: #fff;
+  font-family: Eczar;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+
+  rotate: -90deg;
 }
 
 .choose-size {
