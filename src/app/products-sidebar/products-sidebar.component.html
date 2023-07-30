@@ -1,0 +1,96 @@
+<div [@slideInOut]="menuState">
+  <div>
+    <section
+      class="sidebar-block"
+      *ngFor="let cup of data; let i = index">
+      <div class="info">
+        <h2 class="title">
+          {{ selectedCup?.title }}
+
+          <div class="price">
+            <label class="price-lable">${{ selectedCup?.price?.[250] }} </label>
+          </div>
+        </h2>
+        <div class="cup">
+          <img
+            src="{{ selectedCup?.cupImg }}"
+            alt="Extra Latte Cup"
+            class="cup" />
+          <div
+            class="rotate-img"
+            *ngIf="selectedCup?.stamp"></div>
+        </div>
+
+        <div class="small-grey-line"></div>
+
+        <section>
+          <div class="checkout-list">
+            <div class="list-title1">
+              calories:
+              <span class="list-price">{{
+                selectedCup?.details?.calories
+              }}</span>
+            </div>
+
+            <div class="list-title">
+              Total Fat:
+              <span class="list-price"
+                >{{ selectedCup?.details?.totalFat }} g</span
+              >
+            </div>
+
+            <div class="list-title">
+              Cholesterol:
+              <span class="list-price"
+                >{{ selectedCup?.details?.calories }} mg</span
+              >
+            </div>
+
+            <div class="list-title">
+              Sodium:
+              <span class="list-price"
+                >{{ selectedCup?.details?.sodium }} mg</span
+              >
+            </div>
+
+            <div class="list-title">
+              Total Carbohydrate:
+              <span class="list-price"
+                >{{ selectedCup?.details?.totalCarbohydrate }}g</span
+              >
+            </div>
+
+            <div class="list-title">
+              Protein:
+              <span class="list-price"
+                >{{ selectedCup?.details?.protein }} g</span
+              >
+            </div>
+
+            <div class="small-grey-line2"></div>
+
+            <div class="list-title-gap">
+              Vitamin D:
+              <span class="list-price"
+                >{{ selectedCup?.details?.vitaminD }} mcg</span
+              >
+            </div>
+
+            <div class="list-title">
+              Calcium:
+              <span class="list-price"
+                >{{ selectedCup?.details?.calcium }} mg</span
+              >
+            </div>
+          </div>
+
+          <button
+            class="pay-btn"
+            (click)="onButtonClick2()">
+            Cool, got it
+          </button>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>

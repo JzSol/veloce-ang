@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cup } from '../types/cup.types';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { CountService } from './counter.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,19 +9,23 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CartService {
   public cartItems = new BehaviorSubject<any>([]);
 
+  constructor(private countService: CountService) {}
+
   getCartItems(): Observable<Cup[]> {
     return this.cartItems.asObservable();
   }
 
   addToCart(cup: Cup) {
-    this.cartItems.next([...this.cartItems.value, cup]);
+    const isSameCup = (item: Cup) =>
+      item.id === cup.id &&
+      item.choosenSize === cup.choosenSize &&
+      item.title === cup.title &&
+      item.IsSugarAdded === cup.IsSugarAdded;
 
-    const existingCup = this.cartItems.value.find(
-      (item: any) => item.id === cup.id
-    );
+    const existingCup = this.cartItems.value.find(isSameCup);
 
     if (existingCup) {
-      existingCup.quantity++;
+      existingCup.qty++;
     } else {
       cup.quantity = 1;
       this.cartItems.next([...this.cartItems.value, cup]);
@@ -39,12 +44,16 @@ export class CartService {
   currentQty: Observable<number> = this.qty.asObservable();
 
   incrementQty(cup: Cup) {
-    const cupInCart = this.cartItems.value.find(
-      (item: { id: any }) => item.id === cup.id
-    );
+    const isSameCup = (item: Cup) =>
+      item.id === cup.id &&
+      item.choosenSize === cup.choosenSize &&
+      item.title === cup.title;
+
+    const cupInCart = this.cartItems.value.find(isSameCup);
     if (cupInCart) {
       cupInCart.qty++;
       this.cartItems.next([...this.cartItems.value]);
+      this.countService.incrementCount();
     }
   }
 
@@ -59,6 +68,7 @@ export class CartService {
       } else {
         this.cartItems.next([...this.cartItems.value]);
       }
+      this.countService.decrementCount();
     }
   }
 

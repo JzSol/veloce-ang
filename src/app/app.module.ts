@@ -8,6 +8,8 @@ import { ProductsHeaderComponent } from './products-header/products-header.compo
 import { ProductsPageComponent } from './products-page/products-page.component';
 import { ProductsCartComponent } from './products-cart/products-cart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsSidebarComponent } from './products-sidebar/products-sidebar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsHeaderComponent,
     ProductsPageComponent,
     ProductsCartComponent,
+    ProductsSidebarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

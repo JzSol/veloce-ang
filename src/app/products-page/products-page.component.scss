@@ -46,13 +46,15 @@
   .body {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
   .container {
-    margin-left: 18vw;
-    width: 327px;
+    margin-left: 3vw;
     margin-top: 0px;
   }
   .sloganTxt {
+    width: 327px;
+    align-items: flex-start;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -83,13 +85,7 @@
 .option {
   display: flex;
   flex-direction: column;
-  z-index: 1;
   margin-right: 4.8vw;
-}
-
-.cup {
-  display: flex;
-  z-index: 0;
 }
 
 .rotate-img {
@@ -103,7 +99,6 @@
   align-items: center;
   flex-shrink: 0;
   background-repeat: no-repeat;
-  z-index: 1;
 
   background-image: url('../../Images/Stamp.png');
   animation: rotation 23s ease-in-out infinite;
@@ -124,6 +119,8 @@
 .cup {
   width: 264px;
   height: 220px;
+
+  display: flex;
 }
 
 .nameNprice {

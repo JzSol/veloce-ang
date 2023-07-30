@@ -63,7 +63,7 @@
         {{ item.title }}, {{ item.choosenSize }} ml
         <span class="list-price">
           <span
-            class="list-price"
+            class="item-qty"
             *ngIf="item.qty > 1"
             >{{ item.qty }}X
           </span>
@@ -76,12 +76,13 @@
         <span class="list-price">$5</span>
       </div>
 
+      <div class="small-grey-line"></div>
+
       <div class="total">
         Total
         <span class="list-price"> ${{ getTotalPrice() }} </span>
       </div>
     </div>
-
     <button class="pay-btn">to pay</button>
   </div>
 </section>

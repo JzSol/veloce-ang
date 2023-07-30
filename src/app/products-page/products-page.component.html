@@ -55,7 +55,7 @@
           class="sugar-btn"
           type="checkbox"
           [(ngModel)]="cup.IsSugarAdded" />
-        <div class="sugar">{{ cup.IsSugar }}</div>
+        <div class="sugar">add sugar</div>
       </div>
 
       <div
@@ -70,7 +70,9 @@
           (click)="increment(cup)">
           add to cart
         </button>
-        <button class="info-btn"></button>
+        <button
+          class="info-btn"
+          (click)="onButtonClick(cup)"></button>
       </div>
     </section>
   </section>

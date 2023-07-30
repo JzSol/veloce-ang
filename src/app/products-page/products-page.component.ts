@@ -3,6 +3,7 @@ import { CountService } from '../services/counter.service';
 import { Cup } from '../types/cup.types';
 import { DataService } from '../services/data.service';
 import { CartService } from '../services/cart.service';
+import { ProductDetailService } from '../services/product-detail.service';
 
 @Component({
   selector: 'app-products-page',
@@ -18,7 +19,8 @@ export class ProductsPageComponent implements OnInit {
   constructor(
     private countService: CountService,
     private dataService: DataService,
-    public cartService: CartService
+    public cartService: CartService,
+    private detailsService: ProductDetailService
   ) {}
 
   ngOnInit() {
@@ -46,5 +48,10 @@ export class ProductsPageComponent implements OnInit {
 
   incrementCount() {
     this.count++;
+  }
+
+  onButtonClick(cup: Cup) {
+    this.detailsService.setSelectedProduct(cup);
+    this.detailsService.openModal(true);
   }
 }

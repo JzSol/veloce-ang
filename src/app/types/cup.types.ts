@@ -1,7 +1,5 @@
 export interface Cup {
-  qty: number;
   id: any;
-  quantity: number;
   cupImg: string;
   stamp?: boolean;
   title: string;
@@ -11,6 +9,18 @@ export interface Cup {
   IsSugarAdded: boolean;
   choosenSize?: 250 | 500;
   buttonClicked?: boolean;
-
+  qty: number;
+  quantity: number;
   price: Record<'250' | '500', number>;
+
+  details: {
+    calories: number;
+    totalFat: number;
+    cholesterol: number;
+    sodium: number;
+    totalCarbohydrate: number;
+    protein: number;
+    vitaminD: number;
+    calcium: number;
+  };
 }
